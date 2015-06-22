@@ -1,0 +1,103 @@
+html,
+body {
+  font-family: sans-serif;
+  font-size: .85em;
+  margin: 0;
+}
+html *,
+body * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 100%;
+}
+.page {
+  width: 95%;
+  max-width: 900px;
+  margin: 25px auto;
+}
+.page h1 {
+  font-size: 3em;
+}
+.page .search-bar {
+  padding: 18px 0;
+}
+.page .search-bar .search {
+  padding: 8px 12px;
+  border: 1px solid #DDD;
+  width: 100%;
+}
+.page .right {
+  float: right;
+  width: 25%;
+  box-shadow: 0 0 1px #AAA;
+  padding: 12px;
+  text-align: center;
+}
+.page .right h2 {
+  font-size: 1.25em;
+  margin-bottom: 12px;
+}
+.page .right img {
+  max-width: 100px;
+  margin-bottom: 12px;
+}
+.page .right p.occ:after {
+  content: ',';
+}
+.page .right p.motto {
+  -ms-word-wrap: hyphenate;
+  word-wrap: hyphenate;
+  margin-top: 25px;
+}
+.page .right p.motto:before {
+  content: '"';
+}
+.page .right p.motto:after {
+  content: '"';
+}
+.page .left {
+  width: 75%;
+}
+.page .left table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.page .left table tr {
+  cursor: pointer;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.page .left table tr td,
+.page .left table tr th {
+  border-bottom: 1px solid #EEE;
+  padding: 12px;
+  text-align: left;
+  width: 33.33%;
+}
+.page .left table tr:hover td {
+  background-color: #F8F8F8;
+}
+.page .left table tr.on {
+  background-color: #EEE;
+}
+.page .head {
+  -moz-transition: box-shadow 0.3s;
+  -o-transition: box-shadow 0.3s;
+  -webkit-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+}
+.page .fix {
+  position: relative;
+  background-color: #FFF;
+}
+.page .fix:not(.right) {
+  box-shadow: 0 3px 6px -5px #aaaaaa;
+}

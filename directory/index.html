@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Directory</title>
+    <meta charset="utf-8" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app="directory">
+    <div class="page" ng-controller="MainCtrl as main">
+        <h1>UX Society Members</h1>
+        <div class="search-bar">
+            <input type="text" ng-model="main.search" class="search" placeholder="Search Contacts">
+        </div>
+        <div class="right" dir-fix ng-show="main.currentCnt">
+            <h2>{{main.currentCnt.firstName}} {{main.currentCnt.middleInitial}} {{main.currentCnt.surname}}</h2>
+            <img ng-src="{{main.currentCnt.portrait}}">
+            <p class="occ">{{main.currentCnt.occupation}}</p>
+            <p>{{main.currentCnt.company}}</p>
+            <p class="motto">{{main.currentCnt.motto}}</p>
+        </div>
+        <div class="left">
+            <div dir-fix class="head">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Occupation</th>
+                        <th>Company</th>
+                    </tr>
+                </table>
+            </div>
+            <table>
+                <tr ng-repeat="contact in contacts = (main.contacts | filter: main.search) track by contact.id"
+                    ng-class="{'on': $index == main.current}" ng-click="main.viewContact($index)">
+                    <td>{{contact.firstName}} {{contact.middleInitial}} {{contact.surname}}</td>
+                    <td>{{contact.occupation}}</td>
+                    <td>{{contact.company}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/libs/angular.js"></script>
+    <script src="js/directory.module.js"></script>
+    <script src="js/services/contacts.service.js"></script>
+    <script src="js/directives/dir-fix.directive.js"></script>
+    <script src="js/controllers/main.controller.js"></script>
+</body>
+</html>
