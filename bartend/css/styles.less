@@ -1,0 +1,232 @@
+@import "_base.less";
+
+@TBack: #000;
+@TBase: #211D23;
+@TBaseH: #37373A;
+@TBaseColor: #DBB9F9;
+@TBaseColorP: #807D89;
+@TColor: #FFF;
+@TColorH: #C3A1DB;
+@TColorUnit: #90819B;
+@TColorTitle: #ECE8FC;
+@TButtonFace: #9859B6;
+@TBorder: #655E72;
+
+html, body {
+    &, & * {
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+        color: inherit;
+        font-weight: 400;
+        background: none;
+        list-style: none;
+        font-size: inherit;
+        text-decoration: none;
+        font-family: 'Source Sans Pro', sans-serif;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+
+body {
+    background-color: @TBack;
+    color: @TColor;
+}
+
+.page {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+
+    .title {
+        color: @TColorTitle;
+        font-size: 3em;
+        font-weight: 200;
+        text-align: center;
+        margin: 25px 0;
+    }
+
+    .btn {
+        width: 70%;
+        padding: 12px;
+        display: block;
+        max-width: 300px;
+        text-align: center;
+        border-radius: 5px;
+        margin: 12px auto 36px;
+        background-color: @TButtonFace;
+
+        &:hover {
+            background-color: @TColorH;
+        }
+
+        &:active {
+            background-color: @TButtonFace;
+        }
+    }
+}
+
+.stock-wrap {
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    .stock {
+        flex-basis: 100%;
+        margin: 3px 15px;
+        border-bottom: 1px solid @TBorder;
+        padding-bottom: 3px;
+        text-align: right;
+        -moz-transition: all .3s;
+        -o-transition: all .3s;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+
+        .name {
+            text-transform: capitalize;
+            color: @TColorH;
+            float: left;
+        }
+
+        .unit {
+            font-weight: 700;
+            font-size: .75em;
+            color: @TColorUnit;
+            text-transform: uppercase;
+            float: right;
+            margin-top: 5px;
+            margin-left: 3px;
+            width: 15px;
+            text-align: left;
+        }
+
+        .stock-media();
+    }
+}
+
+.recipe-wrap {
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    .recipe {
+        flex-basis: 100%;
+        margin-bottom: 25px;
+        max-width: 150px;
+        background-color: @TBaseH;
+
+        .recipe-title {
+            background-color: @TBase;
+            color: @TBaseColor;
+            padding: 18px;
+            text-transform: capitalize;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+        }
+
+        .ing-wrap {
+            height: 100px;
+
+            .ing {
+                font-size: .75em;
+                color: @TBaseColorP;
+                padding: 3px 18px;
+
+                .left {
+                    float: left;
+                    width: 30px;
+                }
+            }
+        }
+
+        .controls {
+            text-align: center;
+            margin-bottom: 25px;
+
+            span, button {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+            }
+
+            span {
+                vertical-align: top;
+                line-height: 40px;
+                background-color: @TColorTitle;
+                border-radius: 5px;
+                color: @TBaseH;
+                text-align: center;
+                font-size: 1.7em;
+                font-weight: 700;
+            }
+
+            button {
+                background-size: 65% auto;
+                background-repeat: no-repeat;
+                background-position: center center;
+                cursor: pointer;
+
+                &.inc {
+                    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAABVCAMAAAACNSgvAAAACVBMVEUAAAAnrV8nrV9fbEY5AAAAAnRSTlMAwO33D4gAAABBSURBVHja7dWxDQAwCAPBwP5DZwAKmgiJ6L73tT5NkbVuw2QymUwmk8lkjpr5PiaTyWT+bfpiJpPJZDKZTOZ28wI3gBZh08ipsgAAAABJRU5ErkJggg==);
+
+                    &:active {
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAABVCAMAAAACNSgvAAAACVBMVEUAAAATUzATUzAglvddAAAAAnRSTlMAwO33D4gAAABBSURBVHja7dWxDQAwCAPBwP5DZwAKmgiJ6L73tT5NkbVuw2QymUwmk8lkjpr5PiaTyWT+bfpiJpPJZDKZTOZ28wI3gBZh08ipsgAAAABJRU5ErkJggg==);
+                    }
+                }
+
+                &.dec {
+                    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAATCAMAAAAXrfu1AAAAA1BMVEXAOSuU7d9gAAAAEUlEQVR4AWMYPmAUjIJRMAoABNMAAcN2YTMAAAAASUVORK5CYII=);
+
+                    &:active {
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAATCAMAAAAXrfu1AAAAA1BMVEWBJh3nVaOQAAAAEUlEQVR4AWMYPmAUjIJRMAoABNMAAcN2YTMAAAAASUVORK5CYII=);
+                    }
+                }
+            }
+        }
+
+        &.off {
+            opacity: 0.25;
+
+            button.inc {
+                cursor: not-allowed;
+            }
+        }
+
+        .recipe-media();
+    }
+}
+
+.page.order {
+    width: 95%;
+    max-width: 200px;
+    margin: 50px auto;
+
+    hr {
+        border-bottom: 1px solid @TBorder;
+        padding: 6px;
+        width: 80%;
+        margin: auto;
+    }
+
+    .row {
+        width: 80%;
+        margin: auto;
+
+        .name {
+            color: @TColorH;
+            font-size: 1.2em;
+            text-transform: capitalize;
+            padding: 6px 12px;
+            display: inline-block;
+
+            &.b {
+                font-weight: 700;
+            }
+        }
+    }
+}

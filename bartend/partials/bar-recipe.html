@@ -1,0 +1,14 @@
+﻿<div class="recipe" ng-class="{'off': !br.available}">
+    <div class="recipe-title">{{ brRecipe.split('_').join(' ') }}</div>
+    <div class="ing-wrap">
+        <div ng-repeat="(item, quant) in brIng" class="ing">
+            <span class="left"> {{ quant.value }} <span ng-if="quant.unit != 'n'">{{ quant.unit }}</span> </span>
+            {{ item.split('_').join(' ') }}
+        </div>
+    </div>
+    <div class="controls">
+        <button class="inc" ng-click="br.incCount()"></button>
+        <span class="count">{{ br.count || '-' }}</span>
+        <button class="dec" ng-click="br.decCount()"></button>
+    </div>
+</div>

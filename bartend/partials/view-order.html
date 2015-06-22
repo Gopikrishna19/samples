@@ -1,0 +1,14 @@
+﻿<div class="page order">
+    <div class="title">Summary</div>
+    <ul>
+        <li ng-repeat="order in ord.orders" class="row">
+            <span class="no">{{ order.no || '-' }}</span>
+            <span class="name">{{ order.name.split('_').join(' ') }}</span>
+        </li>
+    </ul>
+    <hr>
+    <div class="row">
+        <span class="no">{{ ord.total || '-' }}</span>
+        <span class="name b">TOTAL</span>
+    </div>
+</div>

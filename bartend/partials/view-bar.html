@@ -1,0 +1,15 @@
+﻿<div class="page">
+    <div class="title">Bar Stock</div>
+    <div class="stock-wrap">
+        <bar-stock ng-repeat="(item, quant) in bar.stock" class="stock"
+                   bs-name="{{item.split('_').join(' ')}}"
+                   bs-quant="temp = (quant | convert: quant.o_unit: false: 1)">
+        </bar-stock>
+    </div>
+    <div class="title">Orders</div>
+    <div class="recipe-wrap">
+        <bar-recipe ng-repeat="(recipe, ing) in bar.recipes" br-recipe="recipe" br-ing="ing">
+        </bar-recipe>
+    </div>
+    <a href="#/order" class="btn">Place Order</a>
+</div>
