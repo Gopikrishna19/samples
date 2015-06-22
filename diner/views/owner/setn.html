@@ -1,0 +1,29 @@
+﻿<!-- Settings Page -->
+<div class="form setn">
+    <div class="title">application settings</div>
+    
+    <div class="col h">Table assigning mode: </div>
+    <div class="col h">
+        <input type="checkbox" placeholder="someone@mail.com" id="assign-mode" class="switch">
+        <label for="assign-mode"></label>
+    </div>
+
+    <div class="col h">Maximum reservation period:</div>
+    <div class="col h">
+        <span>Days</span>
+        <input type="number" value="30" min="1">
+    </div>
+
+    <div class="subtitle">Restaurant open time</div>
+    <div class="col h">
+        <span>from</span>
+        <input type="time" placeholder="--:-- --" value="10:00:00">
+    </div>
+    <div class="col h">
+        <span>to</span>
+        <input type="time" placeholder="someone@mail.com" value="22:00:00">
+    </div>
+    <div class="col f">
+        <button ng-click="save()">Save Settings</button>
+    </div>
+</div>

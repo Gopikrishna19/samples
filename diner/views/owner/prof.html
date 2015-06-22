@@ -1,0 +1,50 @@
+﻿<!-- Profile Page -->
+<div class="form prof">
+    <div class="title">login information</div>
+
+
+    <div class="subtitle">contact details</div>
+    <div class="col h">
+        <span>phone</span>
+        <input type="tel" placeholder="Enter phone number" value="7894561230">
+    </div>
+    <div class="col h">
+        <span>email</span>
+        <input type="email" placeholder="Enter email address" value="someone@diner.com">
+    </div>
+    <div class="col f">
+        <span>address</span>
+        <input type="text" placeholder="Enter address" value="1234 56th Street, NY">
+    </div>
+    <div class="col f">
+        <button ng-click="prof.saveCnt()">Save Contact</button>
+    </div>
+
+
+    <div class="subtitle">change email address</div>
+    <div class="col h">
+        <span>new email address</span>
+        <input type="email" placeholder="someone@mail.com">
+    </div>
+    <div class="col h">
+        <span>confirm email address</span>
+        <input type="email" placeholder="someone@mail.com">
+    </div>
+    <div class="col f">
+        <button ng-click="prof.saveEmail()">Save Email</button>
+    </div>
+
+
+    <div class="subtitle">change password</div>
+    <div class="col h">
+        <span>new password</span>
+        <input type="password" placeholder="Enter Password">
+    </div>
+    <div class="col h">
+        <span>confirm password</span>
+        <input type="password" placeholder="Enter Again">
+    </div>
+    <div class="col f">
+        <button ng-click="prof.savePass()">Save Password</button>
+    </div>
+</div>

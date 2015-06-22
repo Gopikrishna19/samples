@@ -1,0 +1,22 @@
+﻿<!-- Contacts Page -->
+<div class="form cnts">
+    <div class="title">contacts</div>
+    <div class="bms">
+        <a ng-repeat="i in (arr = [] | range: 65 + 26: 65)" 
+           ng-class="{'on': i == cnts.currentFilter}" ng-click="cnts.filterCnts(i)">{{i | ascii}}</a>
+    </div>
+    <div class="table-wrap">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+            <tr ng-repeat="i in arr = ([] | range: 10) track by $index">
+                <td><span class="of">John Doe</span></td>
+                <td><span class="of">789-456-1230</span></td>
+                <td><span class="of">someone@nyc.com</span></td>
+            </tr>
+        </table>
+    </div>
+</div>

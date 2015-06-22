@@ -1,0 +1,17 @@
+﻿<!-- Header Start -->
+<header ng-controller="HeadCtrl as head">
+    <div class="left">
+        <span class="logo"></span>
+        <span class="title">Diner</span>
+    </div>
+    <div class="right">
+        <label class="menu-bar" for="menu-check"></label>
+        <input type="checkbox" id="menu-check">
+        <ul class="menu">
+            <li ng-repeat="p in head.pages" ng-click="head.changePage($index)">
+                <a ng-href="#{{p.cls}}" class="{{p.cls}}" ng-class="{'on': head.currentPage == $index}">{{p.text}}</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<!-- Header End -->

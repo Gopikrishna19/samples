@@ -1,0 +1,29 @@
+﻿<!-- Seatings Page -->
+<div class="form seat">
+    <div class="title">seating arrangments</div>
+
+    <div class="seating">
+        <div ng-repeat="i in arr = ([] | range: 508: 500) track by $index"
+             ng-class="{'on': i % 3 && i % 2}" class="table-top" 
+             ng-click="i % 3 && i % 2 ? seat.showDetails(i) : seat.assignTable(i)"></div>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <tr>
+                <th>Table#</th>
+                <th>CNF#</th>
+                <th>Size</th>
+                <th>Status</th>
+                <th>Since</th>
+            </tr>
+            <tr ng-repeat="i in arr = ([] | range: 508: 500) track by $index" ng-init="cond = i % 3 && i % 2">
+                <td>{{i - 499}}</td>
+                <td><span ng-click="seat.showDetails(i)" ng-show="cond">{{cond && (i | padding) || "-"}}</span></td>
+                <td>{{(i % 2) * 2 + 4}}</td>
+                <td>{{ cond && "Occupied" || "Available" }}</td>
+                <td><span class="of" ng-show="cond">{{ (seat.getDate() | date: 'hh:mm a')}}</span></td>
+            </tr>
+        </table>
+    </div>
+</div>

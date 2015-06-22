@@ -1,0 +1,63 @@
+﻿@import "_base.less";
+
+/* Reset */
+.reset();
+
+body {
+    .body-fn();
+}
+
+header {
+    .header-fn(600px);
+}
+
+.page {
+
+    .form {
+        .input-form();
+    }
+
+    .home {
+        background-image: url(../img/back.jpg);
+        background-size: auto 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        padding: 60px 25px;
+        border-radius: 4px;
+        box-shadow: 0 3px 6px @CPBlack;
+
+        @media screen and (min-width: 650px) {
+            background-size: 100% auto;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            font-size: 32px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            white-space: pre-line;
+
+            .label {
+                font-size: .75em;
+                margin-right: 12px;
+            }
+
+            a {
+                &, &:link, &:visited {
+                    color: @THighB;
+                    font-size: .85em;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    @names: res, log;
+    .page-fn(@names);
+}
+
+.cnf-dlg, .edt-dlg {
+    .dlg-fn();
+}

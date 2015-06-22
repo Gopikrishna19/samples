@@ -1,0 +1,25 @@
+﻿<!-- Reservation Details Page -->
+<div class="form rsrv">
+    <div class="title">reservation list</div>
+    <div class="search">
+        <input type="search" placeholder="Type to Search">
+    </div>
+    <div class="table-wrap">
+        <table>
+            <tr>
+                <th></th>
+                <th>CNF#</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>#</th>
+            </tr>
+            <tr ng-repeat="i in arr = ([] | range: 520: 500) track by $index">
+                <td><a class="det" ng-click="rsrv.showDetails(i)">Details</a></td>
+                <td>{{(i | padding)}}</td>
+                <td><span class="of">John Doe</span></td>
+                <td><span class="of">{{rsrv.getDate() | date: 'MMM dd hh:mm a' }}</span></td>
+                <td>{{i - 499}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

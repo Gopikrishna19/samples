@@ -1,0 +1,38 @@
+﻿<!-- Guest Reservation Page -->
+<form class="form res" ng-submit="res.save()" name="rsrvForm">
+    <div class="title">make a reservation</div>
+    <div class="col h">
+        <span>date</span>
+        <input type="date" placeholder="yyyy-mm-dd" ng-model="res.guest.stamp">
+    </div>
+    <div class="col h">
+        <span>time</span>
+        <input type="time" placeholder="--:-- --" ng-model="res.guest.stamp">
+    </div>
+    <div class="col f">
+        <span>name</span>
+        <input type="text" placeholder="Enter your name" ng-model="res.guest.name">
+    </div>
+    <div class="col f">
+        <span>phone</span>
+        <input type="tel" placeholder="Enter your phone number" ng-model="res.guest.phone">
+    </div>
+    <div class="col f">
+        <span>email</span>
+        <input type="email" placeholder="Enter your email id" ng-model="res.guest.email">
+    </div>
+    <div class="col q">
+        <span>party size</span>
+        <input type="number" placeholder="# Guests" ng-model="res.guest.people">
+    </div>
+    <div class="col t">
+        <span>special needs</span>
+        <input type="text" placeholder="e.res.guest. Birthday, Anniversary etc." ng-model="res.guest.special">
+    </div>
+    <div class="col h">
+        <button type="submit">Submit</button>
+    </div>
+    <div class="col h opt">
+        <a ng-click="res.edit()">Change Existing Reservation?</a>
+    </div>
+</form>

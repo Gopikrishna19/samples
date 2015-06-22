@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Diner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/index.min.css" rel="stylesheet" type="text/css">    
+</head>
+<body ng-app="diner">
+    <!-- Header -->
+    <ng-include src="'views/common/header.html'"></ng-include>
+
+    <!-- Main Page -->
+    <div class="page">
+        <ng-view></ng-view>
+    </div>
+
+    <!-- Confirmation Dialog -->
+    <div class="cnf-dlg" ng-controller="ConfirmationDialogCtrl as cnf" ng-class="{'show': cnf.show}">
+        <div class="form">
+            <div class="title">Reservation Confirmation</div>
+            <span>Confirmation #</span><div class="cnf">{{cnf.guest.cnf}}</div>
+            <span>Name</span><div>{{cnf.guest.name}}</div>
+            <span>On</span><div>{{cnf.guest.stamp | date: "MMM dd, yyyy hh:mm a"}}</div>
+            <div class="ctrl">
+                <button ng-click="cnf.close()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Get Confirmation Number Dialog -->
+    <div class="edt-dlg" ng-controller="EditReservationDialogCtrl as edt">
+        <div class="form">
+            <div class="title">Edit Reservation</div>
+            <span>Confirmation Number</span>
+            <div><input type="number" ng-model="edt.guest.cnf" placeholder="#"></div>
+            <div class="ctrl">
+                <button ng-click="edt.close()">Edit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/lib/ng.js"></script>
+    <script src="js/lib/ng-route.js"></script>
+    <script src="js/lib/ng-animate.js"></script>
+
+    <script src="js/diner.module.min.js"></script>
+
+    <script src="js/core/routers/diner.router.min.js"></script>
+    
+    <script src="js/core/filters/padding.filter.min.js"></script>
+    <script src="js/core/services/dialog.service.min.js"></script>
+    <script src="js/core/controllers/head.controller.min.js"></script>
+
+    <script src="js/index/services/pages.factory.min.js"></script>
+    <script src="js/index/controllers/home.controller.min.js"></script>
+    <script src="js/index/controllers/guest.controller.min.js"></script>
+    <script src="js/index/controllers/owner.controller.min.js"></script>
+    <script src="js/index/controllers/confirmation-dlg.controller.min.js"></script>
+    <script src="js/index/controllers/edit-reservation-dlg.controller.min.js"></script>
+</body>
+</html>

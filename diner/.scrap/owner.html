@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/owner.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app="my-rest" ng-controller="mainCtrl">
+    <header>
+        <div class="left">
+            <span class="logo"></span>
+            <span class="title">Eatery</span>
+        </div>
+        <div class="right">
+            <label class="menu-bar" for="menu-check"></label>
+            <input type="checkbox" id="menu-check">
+            <ul class="menu">
+                <li ng-repeat="p in pages" ng-click="changePage($index)">
+                    <a class="{{p.cls}}" ng-class="{'on': currentPage == $index}">{{p.text}}</a>
+                </li>
+                <li><a class="lout" data-form="lout">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="page" ng-attr-data-form="{{getCurrentPage()}}">
+        <!-- Static implementation -->
+        <ng-include src="'views/owner/rsrv.html'"></ng-include>
+        <ng-include src="'views/owner/seat.html'"></ng-include>
+        <ng-include src="'views/owner/prof.html'"></ng-include>
+        <ng-include src="'views/owner/cnts.html'"></ng-include>
+        <ng-include src="'views/owner/setn.html'"></ng-include>
+        <div class="form rsrv">
+            <div class="title">reservation list</div>
+
+        </div>
+        <div class="form seat">
+            <div class="title">seating arrangments</div>
+
+        </div>
+        <div class="form prof">
+            <div class="title">login information</div>
+
+        </div>
+        <div class="form cnts">
+            <div class="title">contacts</div>
+
+        </div>
+        <div class="form setn">
+            <div class="title">application settings</div>
+
+        </div>
+    </div>
+    <script src="js/ng.js"></script>
+    <script src="js/owner.js"></script>
+</body>
+</html>
