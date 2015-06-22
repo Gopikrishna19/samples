@@ -5,8 +5,7 @@
 
         function ContactsService($http) {
 
-            // var repo = "http://private-a73e-aquentuxsociety.apiary-mock.com/members";
-            var repo = "members.json";
+            var repo = "http://private-a73e-aquentuxsociety.apiary-mock.com/members";
             var cnts = this;
 
             cnts.list = [];
@@ -17,6 +16,7 @@
             function getAllContacts() {
                 return $http.get(repo).success(function (data) {
                     angular.copy(data, cnts.list);
+                    document.querySelectorAll('.loader')[0].classList.remove('on');
                 });
             }
         }

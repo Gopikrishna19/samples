@@ -120,3 +120,20 @@
         }
     }
 }
+
+.loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../img/loader.gif);
+    background-color: rgba(255, 255, 255, .75);
+    display: none;
+
+    &.on {
+        display: block;
+    }
+}

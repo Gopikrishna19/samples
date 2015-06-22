@@ -101,3 +101,18 @@ body * {
 .page .fix:not(.right) {
   box-shadow: 0 3px 6px -5px #aaaaaa;
 }
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(../img/loader.gif);
+  background-color: rgba(255, 255, 255, 0.75);
+  display: none;
+}
+.loader.on {
+  display: block;
+}
