@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="css/bs.css">
+    <link type="text/css" rel="stylesheet" href="css/bst.css">
+</head>
+<body ng-app="calculator">
+    <div ng-controller="MainCtrl as main" class="container-fluid">
+        <div class="row">
+            <div class="form-group col-sm-offset-2 col-sm-4">
+                <input type="text" class="form-control" ng-model="main.num1">
+            </div>
+            <div class="form-group col-sm-4">
+                <input type="text" class="form-control" ng-model="main.num2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-2 col-sm-offset-2">
+                <button class="form-control btn btn-primary" ng-click="main.add()">Add</button>
+            </div>
+            <div class="form-group col-sm-2">
+                <button class="form-control btn btn-primary" ng-click="main.subtract()">Subtract</button>
+            </div>
+            <div class="form-group col-sm-2">
+                <button class="form-control btn btn-primary" ng-click="main.multiply()">Multiply</button>
+            </div>
+            <div class="form-group col-sm-2">
+                <button class="form-control btn btn-primary" ng-click="main.divide()">Divide</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4 col-sm-offset-2 text-right">
+                <label class="label label-primary">Result:</label>
+            </div>
+            <div class="form-group col-sm-4">
+                <input type="text" class="form-control" ng-model="main.result">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/libs/angular.js"></script>
+    <script src="js/calculator.module.js"></script>
+    <script src="js/controllers/main.controller.js"></script>
+</body>
+</html>
